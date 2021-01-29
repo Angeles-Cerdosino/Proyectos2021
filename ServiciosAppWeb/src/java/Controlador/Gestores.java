@@ -4,6 +4,8 @@ import Modelo.*;
 import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -101,9 +103,13 @@ public class Gestores {
                 Tipo v = new Tipo(id, descripcion);
                 lista.add(v);
             }
+            
+            rs.close();
+            st.close();
+            con.close();
         
-        } catch(Exception exc) {
-            exc.printStackTrace();
+        } catch(SQLException exc) {
+            Logger.getLogger(Gestores.class.getName()).log(Level.SEVERE, null, exc);
         } finally {
             cerrarConexion();
         }
