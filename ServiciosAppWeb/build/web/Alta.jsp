@@ -1,8 +1,4 @@
-<%-- 
-    Document   : Alta
-    Created on : 17-Dec-2020, 15:28:30
-    Author     : NotebookSFC
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -15,8 +11,8 @@
    <form method="POST" action="/SER/AltaServicioSrvlt">
         <p>
             <label>Tipo: </label>
-            <select>
-               <c:forEach item="${listaTipo}" var="item">
+            <select name="cbotipo">
+               <c:forEach items="${listaTipo}" var="item">
                     <option value="${item.idTipo}">${item.Descripcion}</option>
                     
                 </c:forEach>               
