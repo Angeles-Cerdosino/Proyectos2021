@@ -11,7 +11,7 @@
     </head>
     <body>
         <h1>Alta de Servicio</h1>
-        <form action="AltaServicioSrvlt" method="POST" > 
+        <form method="POST" action="AltaServiciosSrvlt"> 
             <p>
             <label> TIPO: </label>
             <select name="cbotipo">
