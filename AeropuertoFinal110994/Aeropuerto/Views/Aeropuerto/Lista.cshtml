@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Lista";
+}
+    
+        @model IEnumerable<Aeropuerto.Models.Vuelos>
+
+    <body>
+        <div>
+        <h2 class="text-center">Listado de Vuelos</h2>
+        <br />
+        <div>
+            <table class="table table-striped text-center">
+                <tr>
+                    <th class="text-center">Observaciones</th>
+                    <th class="text-center">Destino</th>
+                    <th class="text-center">Tipo</th>
+                    <th class="text-center">Precio</th>
+                    <th class="text-center">Fecha</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+                @foreach (var vuelos in Model)
+                {
+                    <tr>
+                        <td>@vuelos.Observaciones </td>
+                        <td>@vuelos.IdDestino </td>
+                        <td>@vuelos.Tipo </td>
+                        <td>@vuelos.Precio </td>
+                        <td>@vuelos.Fecha </td>
+
+
+
+                        <td>
+                            <a href="@Url.Action("Editar","Aeropuerto" , new { @id = vuelos.IdVuelos }) " class="btn btn-success"> Editar</a>
+                            <a href="@Url.Action("Eliminar", "Aeropuerto", new { @id = vuelos.IdVuelos }) " class="btn btn-danger"> Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        </div>
+    </body>

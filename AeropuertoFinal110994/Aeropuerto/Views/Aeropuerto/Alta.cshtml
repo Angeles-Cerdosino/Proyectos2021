@@ -1,0 +1,104 @@
+﻿@model Aeropuerto.Models.VMVuelos
+@{
+    ViewBag.Title = "Alta";
+}
+<h1 class="text-center" style="font-family:'Arial Unicode MS'"> Alta de Vuelos</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.VuelosModel.IdVuelos)
+    <body style="background-image: url(https://previews.123rf.com/images/rawpixel/rawpixel1412/rawpixel141201977/34574856-grupo-multi%C3%A9tnico-de-la-gente-de-negocios-con-avi%C3%B3n.jpg)">
+        <div class="container">
+            <div class="signup-form-container">
+                <!-- form start -->
+                <form role="form" id="register-form" autocomplete="off">
+
+                    <div class="form-header">
+                        <h3 class="form-title"><span class="glyphicon glyphicon-pencil"></span><i class="fa fa-user" style="font-weight:bold"> </i> Coloque los datos del Nuevo Vuelo aquí: </h3>
+
+                    </div>
+
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="col-sm-12 control-label">Obervaciones:</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon glyphicon-edit"> </span></div>
+                                @Html.TextBoxFor(model => model.VuelosModel.Observaciones, htmlAttributes: new { @class = "form-control", @id = "txtobservaciones", @type = "text" })
+                                @Html.ValidationMessageFor(model => model.VuelosModel.Observaciones, "", new { @class = "text-danger" })
+                            </div>
+                            <span class="help-block" id="error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-12 control-label">Destino:</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon glyphicon-edit"> </span></div>
+                                @Html.DropDownListFor(model => model.VuelosModel.IdDestino, new SelectList(Model.Destinos,"IdDestino","Nombre"), "Seleccione Destino: ", htmlAttributes: new { @class = "form-control", @id = "iddestino" })
+                                @Html.ValidationMessageFor(model => model.VuelosModel.IdDestino, "", new { @class = "text-danger" })
+                            </div>
+                            <span class="help-block" id="error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-12 control-label">Tipo:</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon glyphicon-edit"></span></div>
+                                @Html.TextBoxFor(model => model.VuelosModel.Tipo, htmlAttributes: new { @class = "form-control", @id = "txttipo", @type = "number" })
+                                @Html.ValidationMessageFor(model => model.VuelosModel.Tipo, "", new { @class = "text-danger" })
+                            </div>
+                            <span class="help-block" id="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-12 control-label">Precio:</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon glyphicon-edit"></span></div>
+                                @Html.TextBoxFor(model => model.VuelosModel.Precio, htmlAttributes: new { @class = "form-control", @id = "txtprecio", @type = "number" })
+                                @Html.ValidationMessageFor(model => model.VuelosModel.Precio, "", new { @class = "text-danger" })
+                            </div>
+                            <span class="help-block" id="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-12 control-label">Fecha:</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><span class="glyphicon glyphicon glyphicon-edit"></span></div>
+                                @Html.TextBoxFor(model => model.VuelosModel.Fecha, htmlAttributes: new { @class = "form-control", @id = "txtfecha", @type = "date" })
+                                @Html.ValidationMessageFor(model => model.VuelosModel.Fecha, "", new { @class = "text-danger" })
+                            </div>
+                            <span class="help-block" id="error"></span>
+                        </div>
+
+                    </div>
+                    <div class="form-footer">
+                        <button class="btn btn-info" type="submit" onclick="validar()">
+                            <span class="glyphicon glyphicon-send "> </span>  Aceptar !
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+}
+@*<script>
+        function validar() {
+
+            let Observaciones = document.getElementById('txtobservaciones').value;
+            let Destino = document.getElementById('iddestino').value;
+            let tipo = document.getElementById('txttipo').value;
+            let precio = document.getElementById('txtprecio').value;
+            let fecha = document.getElementById('txtfecha').value;
+
+            if (!Observaciones) {
+                alert("La observacion es requerida");
+            } else if (!Destino) {
+                alert("Campo requerido: Destino!");
+            } else if (!tipo) {
+                alert("Campo requerido: Tipo!");
+            } else if (!precio) {
+                        alert("Campo requerido: Precio!");
+            } else if (!fecha) {
+                        alert("Campo requerido: Fecha!");
+                    }
+        }
+    </script>*@

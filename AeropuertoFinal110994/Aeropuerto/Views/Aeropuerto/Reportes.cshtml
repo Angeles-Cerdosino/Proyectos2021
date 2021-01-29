@@ -1,0 +1,61 @@
+﻿@model Aeropuerto.Models.ReportesVM
+
+@{
+    ViewBag.Title = "Reportes";
+}
+
+<h2 class="text-center"> Reportes </h2>
+<body style="background-color:aliceblue">
+    <div class="row">
+        <div class="col-sm-12" style="background-color:cornflowerblue">
+            <div>
+                <h2 class="text-center">Cantidad de Vuelos por Destino</h2>
+            </div>
+        </div>
+    </div>
+</body>
+<body>
+    <div class="row">
+        <div class="col-lg-8">
+            <table class="table table-bordered table-striped text-center" , style="background-color: rgba(255,255,255,0.3)">
+                <thead>
+                    <tr>
+
+                        <th class="text-center">
+                            Nombre
+                        </th>
+                        <th class="text-center">
+                            Cantidad
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var resultado in Model.Reportes)
+                    {
+                        <tr class="text-center">
+                            <td>
+                                @resultado.Nombre
+                            </td>
+                            <td>
+                                @resultado.CantidadVuelosDestino
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br />
+            <div class="row">
+                <div class="col-sm-12" style="background-color:darksalmon">
+                    <h2 class="text-center" style="font-weight:300">Cantidad de Vuelos Cargados: </h2>
+                </div>
+            </div>
+            <div>
+                <div class="input-group-addon">
+                    @Model.CantidadVuelosCargados
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
