@@ -58,7 +58,7 @@ public class Servicio {
 
     @Override
     public String toString() {
-        return  id + tipo.getDescripcionT() + descripcion + costo;
+        return  id + tipo.getDescripcion() + descripcion + costo;
     }
 
   
