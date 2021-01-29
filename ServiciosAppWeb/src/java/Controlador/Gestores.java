@@ -85,7 +85,7 @@ public class Gestores {
         }
         return lista;
     }
-    
+       
     //obtener para el combo
   public ArrayList<Tipo> obtenerTipos(){
         ArrayList<Tipo> lista = new ArrayList<>();

@@ -22,7 +22,7 @@ public class AltaServicioSrvlt extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
-    {
+    {        
         ArrayList<Tipo> lista = g.obtenerTipos();
         request.setAttribute("listaTipo", lista);
                
