@@ -10,10 +10,10 @@
     <body>
         <h1> MENU JSP </h1>
         
-        <a href="/SER/ListaServicioSrvlt">Lista de Servicios </a>
+        <a href="/ServiciosAppWeb/ListaServicioSrvlt">Lista de Servicios </a>
         <br>
-        <a href="/SER/AltaServicios.jsp">Alta de Servicios </a>
+        <a href="/ServiciosAppWeb/AltaServicios.jsp">Alta de Servicios </a>
         <br>
-        <a href="/SER/EstadisticasServiciosSrvlt">Estadisticas de Servicios </a>
+        <a href="/ServiciosAppWeb/EstadisticasServiciosSrvlt">Estadisticas de Servicios </a>
     </body>
 </html>
